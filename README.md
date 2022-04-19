@@ -1,4 +1,5 @@
 Wizlet is an app to help with vocab n shi.
+follow @aadichauhan_07 on ig
 
 # Getting Started with Create React App
 
