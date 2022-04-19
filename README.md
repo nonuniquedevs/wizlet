@@ -1,3 +1,5 @@
+Wizlet is an app to help with vocab n shi.
+
 # Getting Started with Create React App
 
 reedited
