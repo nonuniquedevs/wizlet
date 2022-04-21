@@ -1,32 +1,26 @@
 import React, {useState} from 'react';
 import FlashCardList from './FlashcardList'
  
-const Home = () => {
-    const [cards, setCards] = useState(samplecards)
 
-    handleSubmit(event) {
-        samplecards.push({id, question, answer})
+
+function Home() {
+    const [cards, setCards] = useState(samplecards);
+    const [name, setName] = useState("");
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        alert(`You entered ${name}`)
     }
-
 
     return (
        <div>
           <h1>Home</h1>
-           <form onSubmit={this.handleSubmit}>
-               <label>
-                   id:
-                   <input type="number" name="id"/>
-               </label>
-               <label>
-                   question:
-                   <input type="text" name="question"/>
-               </label>
-               <label>
-                   answer:
-                   <input type="text" name="question"/>
-               </label>
-               <input type="submit" value="Submit" />
-           </form>
+          <form onSubmit={handleSubmit}>
+              <label>ID:</label>
+              <input type="number" value={name} onChange={(e) => setName(e.target.value)}/>
+              <label></label>
+          </form>
+           <p>Home page body content</p>
            <FlashCardList flashcards={cards}/>
        </div>
     );
