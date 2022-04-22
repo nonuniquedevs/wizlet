@@ -18,6 +18,7 @@ function Home() {
             answer: answer
         }
         samplecards.push(newflashcard);
+
        // alert(`You entered ${id}, ${question}, ${answer}`)
     }
 
