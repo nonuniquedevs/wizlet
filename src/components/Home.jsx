@@ -1,19 +1,39 @@
 import React, {useState} from 'react';
-import FlashCardList from './FlashcardList'
+//import FlashCardList from './FlashcardList'
  
+const Flashcard = ({ flashcard }) => {
+    const [flip, setFlip] = useState(false)
 
+    return (
+        <div onClick={() => setFlip(!flip)}>
+            { flip ? flashcard.answer : flashcard.question}
+        </div>
+    )
+}
+
+const FlashCardList = ({ flashcards }) =>  {
+    return (
+        <div className="card-grid">
+            {flashcards.map(flashcard => {
+                return <Flashcard flashcard={flashcard} key={flashcard.id}/>
+            }                
+                )}
+        </div>
+
+    )
+}
 
 function Home() {
     const [cards, setCards] = useState(samplecards);
-    const [id, setid] = useState("");
     const [question, setQuestion] = useState("")
     const [answer, setAnswer] = useState("")
 
 
     const handleSubmit = (event) => {
         event.preventDefault();
+        let idm=samplecards.length + 1
         var newflashcard = {
-            id: id,
+            id: idm,
             question: question,
             answer: answer
         }
@@ -26,8 +46,6 @@ function Home() {
        <div>
           <h1>Home</h1>
           <form onSubmit={handleSubmit}>
-              <label>ID:</label>
-              <input type="number" value={id} onChange={(e) => setid(e.target.value)}/>
               <label>Question:</label>
               <input type="text" value={question} onChange={(e) => setQuestion(e.target.value)}/>
               <label>Answer: </label>
