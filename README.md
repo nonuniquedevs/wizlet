@@ -1,5 +1,4 @@
-Wizlet is an app to help with vocab n shi.
-follow @aadichauhan_07 on ig
+Wizlet is an app to help with vocab 
 kri
 # Getting Started with Create React App
 
